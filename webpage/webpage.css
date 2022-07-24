@@ -6,8 +6,6 @@
 }
 
 body {
-    background-image: url('images/background.jpg');
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +20,5 @@ body {
     -moz-background-size: cover;
     -ms-background-size: cover;
     
-    font-family: 'Original Surfer', cursive;
     text-align: center;
 }

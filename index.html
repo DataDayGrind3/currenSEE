@@ -103,22 +103,57 @@
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-    }
-
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
-
-    // run the webcam image through the image model
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+    
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
         }
-    }
-</script>
+    
+        // run the webcam image through the image model
+        async function predict() {
+            // clear the queue and play the new one
+            probabilities = [];
+            // predict can take in an image, video or canvas html element
+            prediction = await model.predict(webcam.canvas);
+        
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+
+            if (interval == 0) interval = setInterval(textToAudio, 5000);
+        }
+    
+        function textToAudio() {
+            probabilities = prediction.map(pred => pred.probability)
+            let maxProb = Math.max(...probabilities);
+            let noteIndex = probabilities.indexOf(maxProb);
+    
+            switch(noteIndex) {
+                case 0: note = '2'; break;
+                case 1: note = '5'; break;
+                case 2: note = '10'; break;
+                case 3: note = '50'; break;
+                case 4: note = '100'; break;
+                default: break;
+            }
+            
+            currentLabel = note;
+    
+            let msg = `That is a ${note} dollar note`;
+    
+            let speech = new SpeechSynthesisUtterance();
+            speech.lang = "en-US";
+            
+            speech.text = msg;
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            
+            window.speechSynthesis.speak(speech);
+        }
+    </script> 
+</body>
+</html>

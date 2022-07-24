@@ -12,11 +12,7 @@
   </head>
 
   <body>
-    <audio
-      src="sounds/welcome.mp3"
-      id="welcome"
-      preload="auto"
-    ></audio>
+    <audio src="sounds/welcome.mp3" id="welcome" preload="auto"></audio>
 
     <div
       id="camera-container"
@@ -101,9 +97,6 @@
 
       // Load the image model and setup the webcam
       async function init() {
-        if (isInitCalled) {
-          return;
-        }
         readStart();
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -125,10 +118,14 @@
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) {
-          // and class labels
-          labelContainer.appendChild(document.createElement("div"));
+
+        if (!isInitCalled) {
+          for (let i = 0; i < maxPredictions; i++) {
+            // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+          }
         }
+
         window.speechSynthesis.cancel();
         isInitCalled = True;
       }

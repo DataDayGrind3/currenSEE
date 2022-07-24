@@ -1,0 +1,22 @@
+{
+    "name": "currenSEE",
+    "short_name": "$ee",
+
+    "description": "A PWA to help visually impaired differentiate currency",
+
+    "scope": "/currenSEE/",
+    "start_url": "/currenSEE/",
+  
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+  
+    "display": "standalone", 
+    
+    "icons": [
+        {
+          "src": "/currenSEE/img/icon.png",
+          "type": "image/png",
+          "sizes": "353x353"
+        }
+    ]
+  }

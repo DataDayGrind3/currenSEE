@@ -13,7 +13,7 @@ function start() {
 function help() {
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en-US";
-    speech.text = "This application aims to help you check your currency. All you have to do is put your dollar note in front of the camera. You can show either the front or back of the note and we will let you know its value. Double-click anywhere on the left side of the current screen to start.";
+    speech.text = "This application aims to help you check your currency. All you have to do is put your dollar note in front of the camera. You can show either the front or back of the note and we will let you know its value. Click anywhere on the left side of the current screen to start.";
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;

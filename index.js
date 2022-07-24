@@ -3,7 +3,7 @@ function start() {
 
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en-US";
-    speech.text = "Starting currenSEE";
+    speech.text = "Starting current see";
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;

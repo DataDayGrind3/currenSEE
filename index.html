@@ -17,6 +17,21 @@
       id="welcome"
       preload="auto"
     ></audio>
+
+    <div
+      id="camera-container"
+      style="
+        position: absolute;
+        left: 45%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+      "
+    >
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+    </div>
+    
     <div id="window" onclick="welcome()"></div>
     <button
       type="button"
@@ -51,20 +66,6 @@
     >
       HELP
     </button>
-
-    <div
-      id="camera-container"
-      style="
-        position: absolute;
-        left: 45%;
-        top: 0%;
-        height: 100%;
-        width: 100%;
-      "
-    >
-      <div id="webcam-container"></div>
-      <div id="label-container"></div>
-    </div>
 
     <script>
       if (navigator.serviceWorker) {

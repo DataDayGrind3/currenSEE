@@ -15,7 +15,7 @@
     "icons": [
         {
           "src": "/currenSEE/images/icon.jpg",
-          "type": "image/png",
+          "type": "image/jpg",
           "sizes": "353x353"
         }
     ]

@@ -16,6 +16,15 @@ var VERSION = 'version_00';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
-  `${GHPATH}/css/styles.css`,
-  `${GHPATH}/js/app.js`
+  `${GHPATH}/index.css`,
+  `${GHPATH}/index.js`,
+
+  `${GHPATH}/my_model/model.json`,
+  `${GHPATH}/my_model/weights.bin`,
+  `${GHPATH}/my_model/metadata.json`,
+
+  `${GHPATH}/sounds/welcome.mp3`,
+
+  `${GHPATH}/img/icon.jpg`
+
 ]

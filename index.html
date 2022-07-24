@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://datadaygrind3.github.io/currenSEE/" />
     <link rel="manifest" href="/currenSEE/manifest.webmanifest">
+    <link rel="icon" href="./images/icon.jpg"/>
     <link rel="stylesheet" href="index.css" />
     <title>currenSEE</title>
   </head>
@@ -16,7 +17,7 @@
       src="sounds/welcome.mp3"
       id="music"
       preload="auto"
-      autoplay="true"
+      autoplay
     ></audio>
 
     <button
@@ -27,8 +28,8 @@
         left: 0%;
         top: 0%;
         position: absolute;
-        background-color: rgb(78, 186, 212);
-        font-size: 50px;
+        background-color: rgba(78, 186, 212, 0.5);
+        font-size: 50%;
         height: 100%;
         width: 50%;
       "
@@ -45,7 +46,7 @@
         left: 50%;
         top: 0%;
         position: absolute;
-        background-color: rgb(218, 152, 78);
+        background-color: rgba(218, 153, 78, 0.5);
         font-size: 50px;
         height: 100%;
         width: 50%;
@@ -60,8 +61,8 @@
     <script>
         if (navigator.serviceWorker) {
           navigator.serviceWorker.register (
-            '/github-page-pwa/sw.js',
-            {scope: '/github-page-pwa/'}
+            '/currenSEE/sw.js',
+            {scope: '/currenSEE/'}
           )
         }
     </script>
@@ -81,6 +82,7 @@
       let currentLabel = "";
 
       function readStart() {
+        console.log("readStart");
         let speech = new SpeechSynthesisUtterance();
         speech.lang = "en-US";
         speech.text = "Starting current see";
@@ -92,6 +94,7 @@
 
       // Load the image model and setup the webcam
       async function init() {
+        console.log("init");
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 

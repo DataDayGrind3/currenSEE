@@ -22,7 +22,7 @@
       id="camera-container"
       style="
         position: absolute;
-        left: 45%;
+        /* left: 45%; */
         top: 0%;
         height: 100%;
         width: 100%;
@@ -31,7 +31,7 @@
       <div id="webcam-container"></div>
       <div id="label-container"></div>
     </div>
-    
+
     <div id="window" onclick="welcome()"></div>
     <button
       type="button"
@@ -81,6 +81,7 @@
 
       // the link to your model provided by Teachable Machine export panel
       const URL = "./my_model/";
+      var isInitCalled = False;
 
       let model, webcam, labelContainer, maxPredictions, note;
       let prediction = [];
@@ -100,6 +101,9 @@
 
       // Load the image model and setup the webcam
       async function init() {
+        if (isInitCalled) {
+          return;
+        }
         readStart();
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -126,6 +130,7 @@
           labelContainer.appendChild(document.createElement("div"));
         }
         window.speechSynthesis.cancel();
+        isInitCalled = True;
       }
 
       async function loop() {

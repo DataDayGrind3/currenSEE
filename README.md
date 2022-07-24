@@ -29,5 +29,7 @@ curren$ee is an application that helps you to identify your currency.
 - [Javascript setInterval](https://www.w3schools.com/jsref/met_win_setinterval.asp)
 <br/>
 <br/>
-# Credit
+
+# Credits
 - [Welcome message](https://wideo.co/text-to-speech/)
+- [Teachable Machine](https://teachablemachine.withgoogle.com/)

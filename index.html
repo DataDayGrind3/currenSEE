@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://datadaygrind3.github.io/currenSEE/" />
-    <link rel="manifest" href="/currenSEE/manifest.webmanifest">
-    <link rel="icon" href="./images/icon.jpg"/>
+    <link rel="manifest" href="/currenSEE/manifest.webmanifest" />
+    <link rel="icon" href="./images/icon.jpg" />
     <link rel="stylesheet" href="index.css" />
     <title>currenSEE</title>
   </head>
 
   <body>
-
     <audio
       src="sounds/welcome.mp3"
       id="music"
@@ -29,7 +28,7 @@
         top: 0%;
         position: absolute;
         background-color: rgba(78, 186, 212, 0.5);
-        font-size: 100px;
+        font-size: 10vw;
         height: 100%;
         width: 50%;
       "
@@ -47,7 +46,7 @@
         top: 0%;
         position: absolute;
         background-color: rgba(218, 153, 78, 0.5);
-        font-size: 100px;
+        font-size: 10vw;
         height: 100%;
         width: 50%;
       "
@@ -55,16 +54,26 @@
       HELP
     </button>
 
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
+    <div
+      id="camera-container"
+      style="
+        position: absolute;
+        left: 45%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+      "
+    >
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+    </div>
 
     <script>
-        if (navigator.serviceWorker) {
-          navigator.serviceWorker.register (
-            '/currenSEE/sw.js',
-            {scope: '/currenSEE/'}
-          )
-        }
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("/currenSEE/sw.js", {
+          scope: "/currenSEE/",
+        });
+      }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -130,6 +139,8 @@
 
       // run the webcam image through the image model
       async function predict() {
+        console.log("predict");
+
         // clear the queue and play the new one
         probabilities = [];
         // predict can take in an image, video or canvas html element

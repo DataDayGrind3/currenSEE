@@ -23,6 +23,6 @@ var URLS = [
   `${GHPATH}/my_model/weights.bin`,
   `${GHPATH}/my_model/metadata.json`,
 
-  `${GHPATH}/sounds/welcome.mp3`,
+  `${GHPATH}/sounds/welcome.mp3`
 
 ]

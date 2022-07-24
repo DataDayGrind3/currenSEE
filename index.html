@@ -81,6 +81,7 @@
       let currentLabel = "";
 
       function readStart() {
+        console.log("readStart");
         let speech = new SpeechSynthesisUtterance();
         speech.lang = "en-US";
         speech.text = "Starting current see";
@@ -92,6 +93,7 @@
 
       // Load the image model and setup the webcam
       async function init() {
+        console.log("init");
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 

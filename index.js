@@ -28,3 +28,8 @@ function welcome() {
     speech.pitch = 1;
     window.speechSynthesis.speak(speech);
 }
+
+window.onload = function() {
+    const welcome = document.getElementById("welcome");
+    welcome.play();
+}

@@ -25,6 +25,6 @@ var URLS = [
 
   `${GHPATH}/sounds/welcome.mp3`,
 
-  `${GHPATH}/img/icon.jpg`
+  `${GHPATH}/images/icon.jpg`
 
 ]

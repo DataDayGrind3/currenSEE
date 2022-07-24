@@ -7,6 +7,7 @@
 
 # References/ Tutorials
 - [Javascript Text-to-Speech](https://codersblock.com/blog/javascript-text-to-speech-and-its-many-quirks/)
+- [Javascript setInterval](https://www.w3schools.com/jsref/met_win_setinterval.asp)
 
 # Inspirations
 - [Double click](https://www.youtube.com/watch?v=xIJPNZlnPUs)

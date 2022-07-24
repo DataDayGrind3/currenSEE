@@ -35,8 +35,7 @@
     <div id="window" onclick="welcome()"></div>
     <button
       type="button"
-      onclick="readStart()"
-      ondblclick="init()"
+      onclick="init()"
       style="
         left: 0%;
         top: 0%;
@@ -90,7 +89,6 @@
       let currentLabel = "";
 
       function readStart() {
-        console.log("readStart");
         let speech = new SpeechSynthesisUtterance();
         speech.lang = "en-US";
         speech.text = "Starting current see";
@@ -102,7 +100,7 @@
 
       // Load the image model and setup the webcam
       async function init() {
-        console.log("init");
+        readStart();
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 

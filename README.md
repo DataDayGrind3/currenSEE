@@ -19,6 +19,15 @@ curren$ee is an application that helps you to identify your currency.
 > <br/>![screenshot 2](./images/ss2.jpg)
 > 3. Voila! 
 > <br/>![screenshot 3](./images/ss3.jpg)
+>
+
+<br/>
+<br/>
+
 # References/ Tutorials
 - [Javascript Text-to-Speech](https://codersblock.com/blog/javascript-text-to-speech-and-its-many-quirks/)
 - [Javascript setInterval](https://www.w3schools.com/jsref/met_win_setinterval.asp)
+<br/>
+<br/>
+# Credit
+- [Welcome message](https://wideo.co/text-to-speech/)

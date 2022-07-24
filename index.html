@@ -14,11 +14,10 @@
   <body>
     <audio
       src="sounds/welcome.mp3"
-      id="music"
+      id="welcome"
       preload="auto"
-      autoplay="true"
     ></audio>
-
+    <div id="window" onclick="welcome()"></div>
     <button
       type="button"
       onclick="readStart()"
@@ -37,7 +36,6 @@
     </button>
 
     <button
-      id="next-button"
       type="button"
       class="btn btn-primary"
       onclick="help()"

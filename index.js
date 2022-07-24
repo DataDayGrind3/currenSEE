@@ -20,11 +20,14 @@ function help() {
     window.speechSynthesis.speak(speech);
 }
 
+const greeting = document.getElementById("welcome");
+
 function welcome() {
-    let speech = new SpeechSynthesisUtterance();
-    speech.lang = "en-US";
-    speech.text = "Welcome to currenSEE. Click left to start and click right for more about this application.";
-    speech.rate = 1;
-    speech.pitch = 1;
-    window.speechSynthesis.speak(speech);
+    greeting.play();
 }
+
+greeting.addEventListener("ended", () => {
+    console.log("ended");
+    let window = document.getElementById("window");
+    window.style.display = "none";
+})
